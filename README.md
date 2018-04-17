@@ -1,2 +1,2 @@
-# pixel-art
+# Pixel-Art
 A modern re-write of an early project.  Originally static html-css-js -- now a Vue-Nuxt effort...
