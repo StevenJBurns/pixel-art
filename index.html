@@ -3,10 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/pixelart.css" />
     <title>pixel-art</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1>Pixel Art Generator!</h1>
+    </header>
+    <main id="app"></main>
     <!-- built files will be auto injected -->
+    <div id="mainContainer">
+      <div id="divColorSelect">
+        <h2>Color Palettes</h2>
+        <hr />
+        <h4>W3C Named Colors</h4>
+        <div id="divW3C"></div>
+        <hr />
+        <span>Or choose from 16,777,216 colors here...</span>
+        <input type="color" name="inputColorSelect">
+        <hr />
+      </div>
+      <div id="divPaintArea">
+        <div id="divGrid"></div>
+        <hr />
+        <h4>Current Color</h4>
+        <div id="divCurrentColor">
+          <span id="spanCurrentColor">Gray</span>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <h4>Steven J Burns &#8226; Galvanize g62 &#8226; <a href="https://github.com/StevenJBurns/pixel-art-maker">Source Code</a></h4>
+    </footer>
+    <script src="js/pixelart.js" async></script>
   </body>
 </html>
