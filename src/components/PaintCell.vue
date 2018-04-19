@@ -13,10 +13,10 @@
 
 <style scoped>
   div {
-    height: 32px;
-    width: 32px;
+    height: 16px;
+    width: 16px;
     color: cornsilk;
-    background: blue;
+    background: darkblue;
     display: inline-block
   }
 

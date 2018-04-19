@@ -24,12 +24,13 @@
 
 <style scoped>
   #divPaintArea {
-    background: darkblue
+    background: #000000
   }
 
   #divGrid {
+    margin: 0 auto;
     display: grid;
-    grid-gap: 4px;
-    grid-template-columns: repeat(32, 32px);
+    grid-gap: 2px;
+    grid-template-columns: repeat(32, 16px);
   }
 </style>
