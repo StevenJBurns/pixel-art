@@ -15,10 +15,9 @@
   div {
     height: 16px;
     width: 16px;
-    color: cornsilk;
-    background: darkblue;
+    color: #0F0F0F;
+    background: #DFDFDF;
     display: inline-block
   }
-
 </style>
 

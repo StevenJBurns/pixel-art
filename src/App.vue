@@ -27,8 +27,10 @@
 <style>
   #app {
     display: grid;
+    flex: 1 0 auto;
+    grid-template-columns: 1fr 2fr;
     color: #DFDFDF;
-    margin: 60px 4vw;
+    
     text-align: center;
 
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
