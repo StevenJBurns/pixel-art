@@ -1,13 +1,20 @@
 <template>
   <main id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <color-select />
+    <paint-area />
   </main>
 </template>
 
 <script>
+  import ColorSelect from "./components/ColorSelect";
+  import PaintArea from "./components/PaintArea";
+
   export default {
     name: 'App',
+    components: {
+      "color-select": ColorSelect,
+      "paint-area": PaintArea
+    },
     data() {
       return {
         "currentColor" : '',
@@ -19,11 +26,13 @@
 
 <style>
   #app {
+    display: grid;
+    color: #DFDFDF;
+    margin: 60px 4vw;
+    text-align: center;
+
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #DFDFDF;
-    margin-top: 60px;
   }
 </style>
