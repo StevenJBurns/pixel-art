@@ -1,43 +1,43 @@
 <template>
   <div id="divPaintArea">
-    <div id="div-grid-wrapper">
-      <div id="divGrid">
-        <paint-cell v-for="i in 1024" v-bind:key="i" />
-      </div>
-    </div>
-    <hr />
-    <h4>Current Color</h4>
-    <div id="divCurrentColor">
-      <span id="spanCurrentColor">Gray</span>
-    </div>
+    <label>Paint Area : </label>
+    <select>
+      <option value="16">16 x 16</option>
+      <option value="24">24 x 24</option>
+      <option value="32">32 x 32</option>
+      <option value="64">64 x 64</option>
+    </select>
+    <button>Clear Grid</button>
+    <button>Save Image</button>
+    <hr>
+    <paint-grid />
+
   </div>
 </template>
 
 <script>
-  import PaintCell from "./PaintCell";
+  import PaintGrid from "./PaintGrid";
 
   export default {
     components: {
-      "paint-cell" : PaintCell
+      "paint-grid" : PaintGrid
     }
   };
-
 </script>
 
 <style scoped>
   #divPaintArea {
+    flex: 1 0 auto;
+    display: inline-block;
     background: #9F9F9F
   }
 
-  #div-grid-wrapper {
-    display: inline-block;
-    margin: 24px auto;
+  label, select, button {
+    font-size: 24px
   }
 
-  #divGrid {
-    display: grid;
-    grid-gap: 2px;
-    grid-template-columns: repeat(32, 16px);
+  select {
+    width: 6em;
   }
 
   hr {

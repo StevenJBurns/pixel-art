@@ -17,22 +17,20 @@
     },
     data() {
       return {
+        "gridDimension" : 16,
         "currentColor" : '',
         "recentColors" : []
       }
     }
-  }
+  };
 </script>
 
 <style>
   #app {
-    display: grid;
     flex: 1 0 auto;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-flow: row wrap;
     color: #DFDFDF;
-    
-    text-align: center;
-
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
