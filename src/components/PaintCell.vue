@@ -1,13 +1,9 @@
 <template>
-  <div :style="{background: currentColor}" />
+  <div v-bind:style="{background: currentColor}" />
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-      }
-    },
     props: ["currentColor"]
   };
 </script>

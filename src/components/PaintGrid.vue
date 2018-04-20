@@ -1,6 +1,6 @@
 <template>
   <div id="div-paint-grid">
-    <paint-cell v-for="i in 1024" v-bind:key="i" />
+    <paint-cell v-for="i in 1024" v-bind:key="i" :currentColor="currentColor"/>
   </div>
 </template>
 
@@ -10,7 +10,8 @@
   export default {
     components: {
       "paint-cell" : PaintCell
-    }
+    },
+    props: ["currentColor"]
   };
 </script>
 

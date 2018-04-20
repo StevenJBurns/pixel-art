@@ -10,7 +10,8 @@
     <button>Clear Grid</button>
     <button>Save Image</button>
     <hr>
-    <paint-grid />
+    <paint-grid :currentColor="currentColor"/>
+    <hr>
   </div>
 </template>
 
@@ -20,7 +21,8 @@
   export default {
     components: {
       "paint-grid" : PaintGrid
-    }
+    },
+    props: ["currentColor"]
   };
 </script>
 

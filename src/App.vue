@@ -1,13 +1,15 @@
 <template>
   <main id="app">
-    <color-select v-bind:currentColor="currentColor" />
-    <paint-area v-bind:currentColor="currentColor"/>
+    <color-select :currentColor="currentColor" v-on:change-current-color="currentColor=$event" />
+    <paint-area :currentColor="currentColor"/>
   </main>
 </template>
 
 <script>
   import ColorSelect from "./components/ColorSelect";
   import PaintArea from "./components/PaintArea";
+
+  console.log(this.props)
 
   export default {
     name: 'App',
@@ -21,6 +23,9 @@
         "currentColor" : 'Green',
         "recentColors" : []
       }
+    },
+    methods: {
+
     }
   };
 </script>

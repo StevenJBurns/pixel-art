@@ -4,7 +4,8 @@
     <h4>W3C Named Colors</h4>
     <div id="div-W3C-colors"></div>
     <hr>
-    <label>Or choose from 16,777,216 colors : <input type="color" name="input-color-select" v-model="currentColor"></label>
+    <label>Or choose from 16,777,216 colors : </label>
+    <input type="color" name="input-color-select" v-on:input="$emit('change-current-color', $event.target.value)">
     <hr>
     <h4>Recently Used Colors</h4>
     <hr>
