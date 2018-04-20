@@ -1,7 +1,7 @@
 <template>
   <main id="app">
-    <color-select />
-    <paint-area />
+    <color-select v-bind:currentColor="currentColor" />
+    <paint-area v-bind:currentColor="currentColor"/>
   </main>
 </template>
 
@@ -18,7 +18,7 @@
     data() {
       return {
         "gridDimension" : 16,
-        "currentColor" : '',
+        "currentColor" : 'Green',
         "recentColors" : []
       }
     }

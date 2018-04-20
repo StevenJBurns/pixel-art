@@ -1,19 +1,21 @@
 <template>
-  <div>
-
-  </div>
+  <div :style="{background: currentColor}" />
 </template>
 
 <script>
   export default {
-
+    data() {
+      return {
+      }
+    },
+    props: ["currentColor"]
   };
 </script>
 
 <style scoped>
   div {
-    height: 12px;
-    width: 12px;
+    height: 16px;
+    width: 16px;
     color: #0F0F0F;
     background: #DFDFDF;
     display: inline-block

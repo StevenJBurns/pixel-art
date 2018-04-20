@@ -1,5 +1,5 @@
 <template>
-  <div id="divPaintArea">
+  <div id="div-paint-area">
     <label>Paint Area : </label>
     <select>
       <option value="16">16 x 16</option>
@@ -11,7 +11,6 @@
     <button>Save Image</button>
     <hr>
     <paint-grid />
-
   </div>
 </template>
 
@@ -26,7 +25,7 @@
 </script>
 
 <style scoped>
-  #divPaintArea {
+  #div-paint-area {
     flex: 1 0 auto;
     display: inline-block;
     background: #9F9F9F
