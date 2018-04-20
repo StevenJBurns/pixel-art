@@ -1,6 +1,6 @@
 <template>
   <div id="divGrid">
-    <paint-cell v-for="i in 256" v-bind:key="i" />
+    <paint-cell v-for="i in 2304" v-bind:key="i" />
   </div>
 </template>
 
@@ -16,9 +16,9 @@
 
 <style scoped>
   #divGrid {
-    margin: 12px auto;
     display: grid;
     grid-gap: 2px;
-    grid-template-columns: repeat(16, 12px);
+    grid-template-columns: repeat(48, 12px);
+    justify-content: center
   }
 </style>
