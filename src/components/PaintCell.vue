@@ -1,10 +1,25 @@
 <template>
-  <div v-bind:style="{background: currentColor}" />
+  <div v-on:click="paintCell(currentColor)" :style="{background: drawColor}" />
 </template>
 
 <script>
   export default {
-    props: ["currentColor"]
+    data() {
+      return {
+        drawColor: ""
+      }
+    },
+    props: ["currentColor"],
+    computed: {
+      computedColor() {
+        return this.currentColor;
+      }
+    },
+    methods: {
+      paintCell: function(c) {
+        this.drawColor = c;
+      }
+    }
   };
 </script>
 
