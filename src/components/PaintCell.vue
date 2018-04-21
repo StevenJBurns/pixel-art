@@ -15,6 +15,12 @@
         return this.currentColor;
       }
     },
+    created() {
+      this.$eventHub.$on('clear-grid', this.paintCell)
+    },
+    beforeDestroy() {
+        this.$eventHub.$off('clear-grid');
+    },
     methods: {
       paintCell: function(c) {
         this.drawColor = c;
