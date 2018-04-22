@@ -9,8 +9,6 @@
   import ColorSelect from "./components/ColorSelect";
   import PaintArea from "./components/PaintArea";
 
-  console.log(this.props)
-
   export default {
     name: 'App',
     components: {

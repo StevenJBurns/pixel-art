@@ -1,5 +1,5 @@
 <template>
-  <div v-on:click="paintCell(currentColor)" :style="{background: drawColor}" />
+  <div v-on:click="paintCell(currentColor)" v-on:mouseover="paintCell(currentColor)" :style="{background: drawColor}" />
 </template>
 
 <script>
@@ -9,20 +9,25 @@
         drawColor: ""
       }
     },
-    props: ["currentColor"],
+    props: ["currentColor", "isMouseDown"],
     computed: {
       computedColor() {
         return this.currentColor;
       }
     },
     created() {
-      this.$eventHub.$on('clear-grid', this.paintCell)
+      this.$eventHub.$on('clear-grid', this.clearCell);
     },
     beforeDestroy() {
         this.$eventHub.$off('clear-grid');
     },
     methods: {
-      paintCell: function(c) {
+      paintCell(c) {
+        if (this.isMouseDown)
+          this.drawColor = c;
+        console.log(c);
+      },
+      clearCell(c) {
         this.drawColor = c;
       }
     }
