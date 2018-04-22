@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <color-select :currentColor="currentColor" v-on:change-current-color="currentColor=$event" />
+    <color-select :currentColor="currentColor" :recentColors="recentColors" v-on:change-current-color="currentColor=$event; updateRecentColors($event)" />
     <paint-area :currentColor="currentColor"/>
   </main>
 </template>
@@ -22,8 +22,22 @@
         "recentColors" : []
       }
     },
+    created() {
+      this.$eventHub.$on('change-current-color', this.updateRecentColors);
+    },
+    beforeDestroy() {
+      this.$eventHub.$off('change-current-color');
+    },
     methods: {
-
+      updateRecentColors(val) {
+        console.log(`New Color : ${val}`);
+        
+        if (this.recentColors.length >= 8)
+          this.recentColors.pop();
+        
+        this.recentColors.push(val);
+        console.log(`Recent Color Array : ${this.recentColors}`);
+      }
     }
   };
 </script>

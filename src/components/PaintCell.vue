@@ -25,7 +25,6 @@
       paintCell(c) {
         if (this.isMouseDown)
           this.drawColor = c;
-        console.log(c);
       },
       clearCell(c) {
         this.drawColor = c;
