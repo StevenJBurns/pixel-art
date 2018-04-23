@@ -8,9 +8,10 @@
     <input type="color" name="input-color-select" v-on:input="$emit('change-current-color', $event.target.value)">
     <hr>
     <h4>Recently Used Colors</h4>
-    <ul>
+    <recent-color-list :recentColors="recentColors" />
+    <!-- <ul>
       <li v-for="color of recentColors" :key="color.index">{{color}}</li>
-    </ul>
+    </ul> -->
     <hr>
     <div id="div-current-color">
       <h3>Current Color : <span id="spanCurrentColor">{{currentColor}}</span></h3>
@@ -20,7 +21,12 @@
 </template>
 
 <script>
+  import RecentColorList from "./RecentColorList";
+
   export default {
+    components: {
+      "recent-color-list": RecentColorList
+    },
     props: ["currentColor", "recentColors"]
   };
 </script>
@@ -47,8 +53,9 @@
   }
 
   #div-current-color-panel {
+    display: inline-block;
+    margin: 8px auto;
     height: 72px;
     width: 72px;
-    display: inline-block
   }
 </style>

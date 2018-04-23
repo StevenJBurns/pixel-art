@@ -33,7 +33,7 @@
         console.log(`New Color : ${val}`);
         
         if (this.recentColors.length >= 8)
-          this.recentColors.pop();
+          this.recentColors.shift();
         
         this.recentColors.push(val);
         console.log(`Recent Color Array : ${this.recentColors}`);
