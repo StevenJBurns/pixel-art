@@ -30,6 +30,12 @@
     created() {
       eventBus.$on('change-current-color', this.changeCurrentColor);
       eventBus.$on('show-clear-grid-modal', this.toggleClearGridModal);
+
+      console.log(localStorage.currentColor);
+      console.log(localStorage.recentColors);
+      
+      this.recentColors = JSON.parse(localStorage.recentColors);
+      this.currentColor = JSON.parse(localStorage.currentColor);
     },
     beforeDestroy() {
       eventBus.$off('change-current-color');
@@ -47,6 +53,9 @@
           this.recentColors.splice(0, 1);
 
         this.recentColors.push(newColor);
+
+        localStorage.currentColor = JSON.stringify(this.currentColor);
+        localStorage.recentColors = JSON.stringify(this.recentColors);
       },
       toggleClearGridModal() {
         this.showClearGridModal = !this.showClearGridModal;
