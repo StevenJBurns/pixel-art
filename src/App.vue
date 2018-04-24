@@ -37,10 +37,10 @@
 
         if (this.recentColors.includes(newColor)) return;
 
-        if (this.recentColors.length >= 8)
-          this.recentColors.shift();
-        
         this.recentColors.push(newColor);
+        
+        if (this.recentColors.length >= 8)
+          this.recentColors.splice(0, 1);
       }
     }
   };

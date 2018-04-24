@@ -7,8 +7,8 @@
       <option value="32">32 x 32</option>
       <option value="64">64 x 64</option>
     </select>
-    <button @click="clearGrid()">Clear Grid</button>
-    <button>Save Image</button>
+    <button type="button" @click="clearGrid()">Clear Grid</button>
+    <button type="button">Save Image</button>
     <hr>
     <paint-grid :currentColor="currentColor"/>
     <hr>

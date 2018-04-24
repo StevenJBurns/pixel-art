@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <div class="div-recent-color-panel" v-for="(color, index) of recentColors" :key="index" 
-          :style="{background: color}" @click="changeCurrentColor(color)" />
-  </div>
+  <transition-group name="recent-color-list" tag="p" mode="out-in">
+    <div  class="recent-color-item"
+          v-for="(color, index) of recentColors"
+          :key="index" 
+          :style="{background: color}"
+          @click="changeCurrentColor(color)" />
+  </transition-group>
 </template>
 
 <script>
@@ -29,12 +32,23 @@
 </script>
 
 <style scoped>
-  .div-recent-color-panel {
-    display: inline-block;
+  .recent-color-item {
     border: 4px solid #202020;
     border-radius: 50%;
-    margin: 0 4px;
+    /* margin: 0 4px; */
     height: 48px;
     width: 48px;
+    transition: all 1s;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .recent-color-list-enter, .recent-color-list-leave-to {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+
+  .recent-color-list-leave-active {
+    position: absolute;
   }
 </style>
