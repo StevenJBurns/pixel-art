@@ -16,6 +16,7 @@
 </template>
 
 <script>
+  import {eventBus} from "../main.js";
   import PaintGrid from "./PaintGrid";
 
   export default {
@@ -24,8 +25,8 @@
     },
     props: ["currentColor"],
     methods: {
-      clearGrid: function() {
-        this.$eventHub.$emit('clear-grid', "#DFDFDF");
+      clearGrid() {
+        eventBus.$emit('clear-grid', '#DFDFDF')
       }
     }
   };

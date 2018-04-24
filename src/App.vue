@@ -1,11 +1,12 @@
 <template>
   <main id="app">
-    <color-select :currentColor="currentColor" :recentColors="recentColors" v-on:change-current-color="currentColor=$event; updateRecentColors($event)" />
+    <color-select :currentColor="currentColor" :recentColors="recentColors" />
     <paint-area :currentColor="currentColor"/>
   </main>
 </template>
 
 <script>
+  import {eventBus} from "./main.js";
   import ColorSelect from "./components/ColorSelect";
   import PaintArea from "./components/PaintArea";
 
@@ -17,26 +18,29 @@
     },
     data() {
       return {
-        "gridDimension" : 16,
-        "currentColor" : 'Green',
-        "recentColors" : []
+        gridDimension : 16,
+        currentColor : 'Green',
+        recentColors : []
       }
     },
     created() {
-      this.$eventHub.$on('change-current-color', this.updateRecentColors);
+      eventBus.$on('change-current-color', this.changeCurrentColor)
     },
     beforeDestroy() {
-      this.$eventHub.$off('change-current-color');
+      eventBus.$off('change-current-color');
     },
     methods: {
-      updateRecentColors(val) {
-        console.log(`New Color : ${val}`);
+      changeCurrentColor(newColor) {
+        console.log(`New Color: ${newColor}`);
         
+        this.currentColor = newColor;
+
+        if (this.recentColors.includes(newColor)) return;
+
         if (this.recentColors.length >= 8)
           this.recentColors.shift();
         
-        this.recentColors.push(val);
-        console.log(`Recent Color Array : ${this.recentColors}`);
+        this.recentColors.push(newColor);
       }
     }
   };

@@ -3,31 +3,28 @@
 </template>
 
 <script>
+  import {eventBus} from "../main.js";
+
   export default {
     data() {
       return {
-        drawColor: ""
+        drawColor: null
       }
     },
     props: ["currentColor", "isMouseDown"],
-    computed: {
-      computedColor() {
-        return this.currentColor;
-      }
-    },
     created() {
-      this.$eventHub.$on('clear-grid', this.clearCell);
+      eventBus.$on('clear-grid', this.clearCell);
     },
     beforeDestroy() {
-        this.$eventHub.$off('clear-grid');
+      eventBus.$off('clear-grid');
     },
     methods: {
       paintCell(c) {
         if (this.isMouseDown)
           this.drawColor = c;
       },
-      clearCell(c) {
-        this.drawColor = c;
+      clearCell(clearColor) {
+        this.drawColor = clearColor;
       }
     }
   };
