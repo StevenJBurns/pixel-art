@@ -26,7 +26,8 @@
     props: ["currentColor"],
     methods: {
       clearGrid() {
-        eventBus.$emit('clear-grid', '#DFDFDF')
+        eventBus.$emit('show-clear-grid-modal');
+        //eventBus.$emit('clear-grid', '#DFDFDF');
       }
     }
   };
