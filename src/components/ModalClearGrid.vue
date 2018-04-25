@@ -44,10 +44,10 @@
   }
 
   .modal {
-    width: 50%;
+    width: 320px;
     padding: 24px;
     background: #DFDFDF;
-    box-shadow: 2px 2px 20px 1px;
+    /* box-shadow: 2px 2px 20px 1px; */
     overflow-x: auto;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@
 
   button {
     width: 300px;
-    margin: 4px auto;
+    margin: 4px;
     padding: 2px 8px;
     font-size: 20px
   }

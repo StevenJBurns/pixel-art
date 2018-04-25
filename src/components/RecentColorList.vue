@@ -1,5 +1,5 @@
 <template>
-  <transition-group name="recent-color-list" tag="p" mode="out-in">
+  <transition-group name="recent-color-list" tag="p">
     <div  class="recent-color-item"
           v-for="(color, index) of recentColors"
           :key="index" 
@@ -33,19 +33,18 @@
 
 <style scoped>
   .recent-color-item {
-    border: 4px solid #202020;
-    border-radius: 50%;
-    /* margin: 0 4px; */
     height: 48px;
     width: 48px;
+    border: 4px solid #202020;
+    border-radius: 50%;
     transition: all 1s;
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 8px;
   }
 
   .recent-color-list-enter, .recent-color-list-leave-to {
     opacity: 0;
-    transform: translateY(48px);
+    transform: translateY(96px);
   }
 
   .recent-color-list-leave-active {
