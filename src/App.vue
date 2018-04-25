@@ -2,7 +2,7 @@
   <main id="app">
     <color-select :currentColor="currentColor" :recentColors="recentColors" />
     <paint-area :currentColor="currentColor"/>
-    <clear-grid-modal v-show="showClearGridModal" />
+    <modal-clear-grid v-show="showClearGridModal" />
   </main>
 </template>
 
@@ -10,41 +10,36 @@
   import {eventBus} from "./main.js";
   import ColorSelect from "./components/ColorSelect";
   import PaintArea from "./components/PaintArea";
-  import ClearGridModal from "./components/ClearGridModal"
+  import ModalClearGrid from "./components/ModalClearGrid"
 
   export default {
     name: 'App',
     components: {
       "color-select": ColorSelect,
       "paint-area": PaintArea,
-      "clear-grid-modal": ClearGridModal
+      "modal-clear-grid": ModalClearGrid
     },
     data() {
       return {
         gridDimension : 16,
-        currentColor : 'Green',
+        currentColor : '',
         recentColors : [],
         showClearGridModal: false
       }
     },
     created() {
       eventBus.$on('change-current-color', this.changeCurrentColor);
-      eventBus.$on('show-clear-grid-modal', this.toggleClearGridModal);
-
-      console.log(localStorage.currentColor);
-      console.log(localStorage.recentColors);
-      
+      eventBus.$on('modalClearGridRequested', this.toggleClearGridModal);
+            
       this.recentColors = JSON.parse(localStorage.recentColors);
       this.currentColor = JSON.parse(localStorage.currentColor);
     },
     beforeDestroy() {
       eventBus.$off('change-current-color');
-      eventBus.$off('show-clear-grid-modal');
+      eventBus.$off('modalClearGridRequested');
     },
     methods: {
       changeCurrentColor(newColor) {
-        console.log(`New Color: ${newColor}`);
-        
         this.currentColor = newColor;
 
         if (this.recentColors.includes(newColor)) return;

@@ -1,6 +1,6 @@
 <template>
   <div id="div-paint-grid" v-on:mousedown="isMouseDown=true" v-on:mouseup="isMouseDown=false">
-    <paint-cell v-for="i in 1024" v-bind:key="i" :currentColor="currentColor" :isMouseDown="isMouseDown" />
+    <paint-cell v-for="i in 1024" :key="i" :currentColor="currentColor" :isMouseDown="isMouseDown" />
   </div>
 </template>
 

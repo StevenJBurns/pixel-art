@@ -1,9 +1,9 @@
 <template>
   <div class="modal-backdrop">
     <div class="modal">
-      <button type="button">Clear Grid (No Save)</button>
+      <button type="button" @click="closeModalNoSave">Clear Grid (No Save)</button>
       <button type="button">Save Image Then Clear Grid</button>
-      <button type="button" @click="close">Cancel Clear Grid</button>
+      <button type="button" @click="closeModalCancel">Cancel Clear Grid</button>
     </div>
   </div>
 </template>
@@ -15,8 +15,15 @@
   export default {
     name: 'clear-grid-modal',
     methods: {
-      close() {
-        eventBus.$emit('show-clear-grid-modal');
+      closeModalCancel() {
+        eventBus.$emit('modalClearGridRequested');
+      },
+      closeModalNoSave() {
+        eventBus.$emit('clear-grid');
+        eventBus.$emit('modalClearGridRequested');
+      },
+      closeModalAndSave() {
+
       }
     }
   }
