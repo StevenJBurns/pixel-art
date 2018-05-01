@@ -39,11 +39,32 @@
       a:active {
 
       }
+      
+      svg {
+        display: inline-block
+      }
+      rect {
+        height: 72px;
+        width: 72px;
+        rx="15";
+        ry="15"
+      }
     </style>
     <title>Steven J Burns &bull; Pixel Art</title>
   </head>
   <body>
     <header>
+      <svg height="64" width="64" viewbox="0 0 256 256">
+        <rect x="10" y="10" style="fill:#FF000040" />
+        <rect x="92" y="10" style="fill:#FF000080" />
+        <rect x="174" y="10" style="fill:#FF0000BF" />
+        <rect x="10" y="92" style="fill:#00FF0040" />
+        <rect x="92" y="92" style="fill:#00FF0080" />
+        <rect x="174" y="92" style="fill:#00FF00BF" />
+        <rect x="10" y="174" style="fill:#0000FF40" />
+        <rect x="92" y="174" style="fill:#0000FF80" />
+        <rect x="174" y="174" style="fill:#0000FFBF" />
+      </svg>
       <h1>Pixel-Art</h1>
     </header>
     <div id="app"></div>
