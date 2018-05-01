@@ -9,6 +9,7 @@
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
+    <button type="button">Clear Recent Colors</button>
     <hr>
     <current-color-panel :currentColor="currentColor" />
   </div>
@@ -52,6 +53,12 @@
 
   h4 {
     padding: 16px 0;
+  }
+
+  button {
+    font-size: 24px;
+    margin: 8px auto;
+    padding: 0 8px
   }
 
   hr {

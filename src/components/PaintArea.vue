@@ -16,7 +16,6 @@
       <button type="button">Save Image</button>
       <button type="button" @click="requestClearGrid()">Clear Grid</button>
     </div>
-    <hr>
   </div>
 </template>
 
