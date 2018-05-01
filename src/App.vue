@@ -29,6 +29,7 @@
     },
     created() {
       eventBus.$on('change-current-color', this.changeCurrentColor);
+      eventBus.$on('clearRecentColors', this.onClearRecentColors);
       eventBus.$on('modalClearGridRequested', this.toggleClearGridModal);
 
       this.recentColors = JSON.parse(localStorage.recentColors);
@@ -36,6 +37,7 @@
     },
     beforeDestroy() {
       eventBus.$off('change-current-color');
+      eventBus.$off('clearRecentColors');
       eventBus.$off('modalClearGridRequested');
     },
     methods: {
@@ -51,6 +53,11 @@
 
         localStorage.currentColor = JSON.stringify(this.currentColor);
         localStorage.recentColors = JSON.stringify(this.recentColors);
+      },
+      onClearRecentColors() {
+        console.log(this.recentColors);
+        while(this.recentColors.length) this.recentColors.pop();
+        this.recentColors.push(this.currentColor);
       },
       toggleClearGridModal() {
         this.showClearGridModal = !this.showClearGridModal;

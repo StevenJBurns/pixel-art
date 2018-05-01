@@ -9,7 +9,7 @@
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
-    <button type="button">Clear Recent Colors</button>
+    <button type="button" @click="requestClearRecentColors">Clear Recent Colors</button>
     <hr>
     <current-color-panel :currentColor="currentColor" />
   </div>
@@ -33,6 +33,9 @@
     methods: {
       changeCurrentColor(newColor) {
         eventBus.$emit('change-current-color', newColor)
+      },
+      requestClearRecentColors() {
+        eventBus.$emit('clearRecentColors');
       }
     }
   };
