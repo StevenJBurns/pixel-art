@@ -5,6 +5,8 @@
     <div id="div-W3C-colors"></div>
     <hr>
     <label>Or choose from 16,777,216 colors : </label>
+    <br>
+    <br>
     <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)">
     <hr>
     <h4>Recently Used Colors</h4>
@@ -43,7 +45,8 @@
 
 <style scoped>
   #div-color-select {
-    flex: 1 0 auto;
+    /* flex: 1 0 auto; */
+    width: 320px;
     text-align: center;
     background: #708090;
     display: inline-block;
@@ -73,7 +76,7 @@
     border: 4px solid #202020;
     border-radius: 50%;
     margin: 8px auto;
-    height: 72px;
-    width: 72px;
+    height: 48px;
+    width: 48px;
   }
 </style>
