@@ -40,13 +40,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   .modal {
-    width: 320px;
+    width: 288px;
     padding: 24px;
-    background: #DFDFDF;
+    background: #BFBFBF;
     /* box-shadow: 2px 2px 20px 1px; */
     overflow-x: auto;
     display: flex;
@@ -54,9 +54,9 @@
   }
 
   button {
-    width: 300px;
+    width: 240px;
     margin: 4px;
-    padding: 2px 8px;
-    font-size: 20px
+    padding: 2px 4px;
+    font-size: 16px
   }
 </style>

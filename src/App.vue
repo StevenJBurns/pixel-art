@@ -58,6 +58,7 @@
         console.log(this.recentColors);
         while(this.recentColors.length) this.recentColors.pop();
         this.recentColors.push(this.currentColor);
+        localStorage.recentColors = JSON.stringify(this.recentColors);
       },
       toggleClearGridModal() {
         this.showClearGridModal = !this.showClearGridModal;
