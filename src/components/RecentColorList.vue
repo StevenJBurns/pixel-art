@@ -33,8 +33,8 @@
 
 <style scoped>
   .recent-color-item {
-    height: 48px;
-    width: 48px;
+    height: 32px;
+    width: 32px;
     border: 4px solid #202020;
     border-radius: 50%;
     transition: all 1s;

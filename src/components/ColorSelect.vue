@@ -46,7 +46,7 @@
 <style scoped>
   #div-color-select {
     /* flex: 1 0 auto; */
-    width: 320px;
+    width: 100%;
     text-align: center;
     background: #708090;
     display: inline-block;
