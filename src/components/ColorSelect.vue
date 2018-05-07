@@ -8,7 +8,7 @@
     <br>
     <br>
     <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)">
-    <input class="jscolor" value="ab2567">
+    <input class="jscolor" :value="currentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
@@ -22,6 +22,7 @@
   import {eventBus} from "../main.js";
   import RecentColorList from "./RecentColorList";
   import CurrentColorPanel from "./CurrentColorPanel";
+  import {jsColor} from "jscolor-picker";
 
   export default {
     components: {
