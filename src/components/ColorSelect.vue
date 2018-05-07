@@ -7,7 +7,7 @@
     <label>Or choose from 16,777,216 colors : </label>
     <br>
     <br>
-    <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)">
+    <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
     <input class="jscolor" :value="currentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
