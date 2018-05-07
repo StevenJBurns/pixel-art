@@ -23,6 +23,7 @@
   import RecentColorList from "./RecentColorList";
   import CurrentColorPanel from "./CurrentColorPanel";
   import {jsColor} from "jscolor-picker";
+  // just a test
 
   export default {
     components: {
