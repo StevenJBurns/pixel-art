@@ -22,6 +22,7 @@
     data() {
       return {
         gridDimension : 16,
+        cellDimension : 8,
         currentColor : '',
         recentColors : [],
         showClearGridModal: false
