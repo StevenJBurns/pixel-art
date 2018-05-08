@@ -8,7 +8,7 @@
     <br>
     <br>
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
-    <input class="jscolor" :value="currentColor" />
+    <button class="jscolor {value:'66ccff'}" :value="currentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
