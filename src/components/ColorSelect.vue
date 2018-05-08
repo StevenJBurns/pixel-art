@@ -7,7 +7,7 @@
     <label>Or choose from 16,777,216 colors : </label>
     <br>
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
-    <sketch-color-picker :value="colors" @input="changeCurrentColor" />
+    <sketch-color-picker class="sketch" :value="colors" @input="changeCurrentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
@@ -39,7 +39,6 @@
     props: ["currentColor", "recentColors"],
     methods: {
       changeCurrentColor(c) {
-        console.log(c.hex);
         eventBus.$emit('change-current-color', c.hex)
       },
       requestClearRecentColors() {
@@ -84,5 +83,9 @@
     margin: 8px auto;
     height: 48px;
     width: 48px;
+  }
+
+  .sketch {
+    margin: 0 auto
   }
 </style>
