@@ -7,7 +7,11 @@
     <label>Or choose from 16,777,216 colors : </label>
     <br>
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
-    <button class="jscolor {hash:true, width:192, height:160, position:'top', borderColor:'#F0F0F0', insetColor:'#FFF', backgroundColor:'#7F7F7F'}" :value="currentColor" />
+    <!-- <button type="button"
+            class="jscolor"
+            data-jscolor="{hash: true, width: 192, height:160, position: 'top', borderColor:'#F0F0F0', backgroundColor: '#7F7F7F', insetColor: '#F0F0F0'}"
+            @onchange="changeCurrentColor(this.jscolor)"
+            :value="currentColor" /> -->
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
@@ -21,8 +25,7 @@
   import {eventBus} from "../main.js";
   import RecentColorList from "./RecentColorList";
   import CurrentColorPanel from "./CurrentColorPanel";
-  import {jsColor} from "jscolor-picker";
-  // just a test
+  // import {jsColor} from "jscolor-picker";
 
   export default {
     components: {
@@ -35,8 +38,9 @@
     },
     props: ["currentColor", "recentColors"],
     methods: {
-      changeCurrentColor(newColor) {
-        eventBus.$emit('change-current-color', newColor)
+      changeCurrentColor(jscolor) {
+        console.log(jscolor);
+        //eventBus.$emit('change-current-color', jscolor.value)
       },
       requestClearRecentColors() {
         eventBus.$emit('clearRecentColors');
