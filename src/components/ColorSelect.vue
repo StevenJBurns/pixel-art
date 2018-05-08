@@ -6,9 +6,8 @@
     <hr>
     <label>Or choose from 16,777,216 colors : </label>
     <br>
-    <br>
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
-    <button class="jscolor {value:'66ccff'}" :value="currentColor" />
+    <button class="jscolor {hash:true, width:192, height:160, position:'top', borderColor:'#F0F0F0', insetColor:'#FFF', backgroundColor:'#7F7F7F'}" :value="currentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
@@ -65,7 +64,7 @@
   }
 
   button {
-    font-size: 24px;
+    font-size: 20px;
     margin: 8px auto;
     padding: 0 8px
   }
