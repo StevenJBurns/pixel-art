@@ -7,11 +7,7 @@
     <label>Or choose from 16,777,216 colors : </label>
     <br>
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
-    <!-- <button type="button"
-            class="jscolor"
-            data-jscolor="{hash: true, width: 192, height:160, position: 'top', borderColor:'#F0F0F0', backgroundColor: '#7F7F7F', insetColor: '#F0F0F0'}"
-            @onchange="changeCurrentColor(this.jscolor)"
-            :value="currentColor" /> -->
+    <sketch-color-picker :value="colors" @input="changeCurrentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
@@ -25,22 +21,26 @@
   import {eventBus} from "../main.js";
   import RecentColorList from "./RecentColorList";
   import CurrentColorPanel from "./CurrentColorPanel";
-  // import {jsColor} from "jscolor-picker";
+  import {Sketch} from "vue-color";
+
+  let colors = '';
 
   export default {
     components: {
       "recent-color-list": RecentColorList,
-      "current-color-panel": CurrentColorPanel
+      "current-color-panel": CurrentColorPanel,
+      "sketch-color-picker": Sketch
     },
     data() {
       return {
+        colors
       }
     },
     props: ["currentColor", "recentColors"],
     methods: {
-      changeCurrentColor(jscolor) {
-        console.log(jscolor);
-        //eventBus.$emit('change-current-color', jscolor.value)
+      changeCurrentColor(c) {
+        console.log(c.hex);
+        eventBus.$emit('change-current-color', c.hex)
       },
       requestClearRecentColors() {
         eventBus.$emit('clearRecentColors');
