@@ -35,8 +35,8 @@
   .recent-color-item {
     height: 32px;
     width: 32px;
-    border: 4px solid #202020;
-    border-radius: 50%;
+    border: 2px solid #202020;
+    border-radius: 4px;
     transition: all 1s;
     display: inline-block;
     margin-right: 8px;

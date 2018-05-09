@@ -35,8 +35,8 @@
 <style scoped>
   #div-current-color-panel {
     display: inline-block;
-    border: 4px solid #202020;
-    border-radius: 50%;
+    border: 2px solid #202020;
+    border-radius: 4px;
     margin: 8px auto;
     height: 72px;
     width: 72px;
