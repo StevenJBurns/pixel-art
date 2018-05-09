@@ -4,11 +4,11 @@
     <h4>W3C Named Colors</h4>
     <div id="div-W3C-colors"></div>
     <compact-color-picker class="compact" :value="colors" @input="changeCurrentColor" />
+    <sketch-color-picker class="sketch" :value="colors" @input="changeCurrentColor" />
     <hr>
     <label>Or choose from 16,777,216 colors : </label>
     <br>
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
-    <sketch-color-picker class="sketch" :value="colors" @input="changeCurrentColor" />
     <hr>
     <h4>Recently Used Colors</h4>
     <recent-color-list :recentColors="recentColors" />
@@ -88,6 +88,12 @@
   }
 
   .sketch, .compact {
-    margin: 0 auto
+    margin: 0 auto;
+    display: inline-block
+  }
+
+  .compact {
+    height: 192px;
+    width: 88px
   }
 </style>
