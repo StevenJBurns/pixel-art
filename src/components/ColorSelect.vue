@@ -1,13 +1,13 @@
 <template>
   <div id="div-color-select">
     <h2>Color Select</h2>
-    <h4>W3C Named Colors</h4>
+    <!-- <h4>W3C Named Colors</h4> -->
     <div id="div-W3C-colors"></div>
     <compact-color-picker class="compact" :value="colors" @input="changeCurrentColor" />
     <sketch-color-picker class="sketch" :value="colors" @input="changeCurrentColor" />
-    <hr>
+    <!-- <hr>
     <label>Or choose from 16,777,216 colors : </label>
-    <br>
+    <br> -->
     <!-- <input type="color" name="input-color-select" @change="changeCurrentColor($event.target.value)"> -->
     <hr>
     <h4>Recently Used Colors</h4>
@@ -20,7 +20,7 @@
 
 <script>
   import {eventBus} from "../main.js";
-  import RecentColorList from "./RecentColorList";
+  import RecentColorList from "./ColorSelectRecentList";
   import CurrentColorPanel from "./CurrentColorPanel";
   import {Sketch, Compact} from "vue-color";
 

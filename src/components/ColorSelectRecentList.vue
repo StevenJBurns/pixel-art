@@ -1,10 +1,10 @@
 <template>
   <transition-group name="recent-color-list" tag="p">
-    <div  class="recent-color-item"
-          v-for="(color, index) of recentColors"
-          :key="index" 
-          :style="{background: color}"
-          @click="changeCurrentColor(color)" />
+    <div class="recent-color-item"
+         v-for="(color, index) of recentColors"
+         :key="index" 
+         :style="{background: color}"
+         @click="changeCurrentColor(color)" />
   </transition-group>
 </template>
 
