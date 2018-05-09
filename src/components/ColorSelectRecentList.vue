@@ -39,12 +39,17 @@
     border-radius: 4px;
     transition: all 1s;
     display: inline-block;
-    margin-right: 8px;
+    margin: 2px;
   }
 
-  .recent-color-list-enter, .recent-color-list-leave-to {
+  .recent-color-list-enter {
+    opacity: 1;
+    transform: translateX(96px);
+  }
+
+  .recent-color-list-leave-to {
     opacity: 0;
-    transform: translateY(96px);
+    transform: translateX(-256px);
   }
 
   .recent-color-list-leave-active {

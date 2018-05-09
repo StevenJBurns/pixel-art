@@ -48,7 +48,7 @@
         if (this.recentColors.includes(newColor)) return;
         
         if (this.recentColors.length >= 8)
-          this.recentColors.pop();
+          this.recentColors.shift();
 
         this.recentColors.push(newColor);
 
@@ -56,7 +56,6 @@
         localStorage.recentColors = JSON.stringify(this.recentColors);
       },
       onClearRecentColors() {
-        console.log(this.recentColors);
         while(this.recentColors.length) this.recentColors.pop();
         this.recentColors.push(this.currentColor);
         localStorage.recentColors = JSON.stringify(this.recentColors);
