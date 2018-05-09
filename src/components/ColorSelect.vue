@@ -3,6 +3,7 @@
     <h2>Color Select</h2>
     <h4>W3C Named Colors</h4>
     <div id="div-W3C-colors"></div>
+    <compact-color-picker class="compact" :value="colors" @input="changeCurrentColor" />
     <hr>
     <label>Or choose from 16,777,216 colors : </label>
     <br>
@@ -21,7 +22,7 @@
   import {eventBus} from "../main.js";
   import RecentColorList from "./RecentColorList";
   import CurrentColorPanel from "./CurrentColorPanel";
-  import {Sketch} from "vue-color";
+  import {Sketch, Compact} from "vue-color";
 
   let colors = '';
 
@@ -29,7 +30,8 @@
     components: {
       "recent-color-list": RecentColorList,
       "current-color-panel": CurrentColorPanel,
-      "sketch-color-picker": Sketch
+      "sketch-color-picker": Sketch,
+      "compact-color-picker": Compact
     },
     data() {
       return {
@@ -85,7 +87,7 @@
     width: 48px;
   }
 
-  .sketch {
+  .sketch, .compact {
     margin: 0 auto
   }
 </style>
