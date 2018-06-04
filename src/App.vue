@@ -33,8 +33,10 @@
       eventBus.$on('clearRecentColors', this.onClearRecentColors);
       eventBus.$on('modalClearGridRequested', this.toggleClearGridModal);
 
-      this.recentColors = JSON.parse(localStorage.recentColors);
-      this.currentColor = JSON.parse(localStorage.currentColor);
+      // if (this.localStorage.recentColors && this.localStorage.currentColor) {
+      //   this.recentColors = JSON.parse(localStorage.recentColors);
+      //   this.currentColor = JSON.parse(localStorage.currentColor);
+      // }
     },
     beforeDestroy() {
       eventBus.$off('change-current-color');
