@@ -14,6 +14,6 @@ export const eventBus = new Vue({});
 /* eslint-disable no-new */
 
 new Vue({
-  el: '#app',
+  el: '#vue-root',
   render: h => h(App)
 })
