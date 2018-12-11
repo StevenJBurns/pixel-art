@@ -1,16 +1,20 @@
 <template>
-  <main id="app">
-    <color-select :currentColor="currentColor" :recentColors="recentColors" />
-    <paint-area :currentColor="currentColor"/>
-    <modal-clear-grid v-show="showClearGridModal" />
+  <main>  
+  <v-app app dark>
+    <v-content>
+      <color-select :currentColor="currentColor" :recentColors="recentColors" />
+      <paint-area :currentColor="currentColor"/>
+      <modal-clear-grid v-show="showClearGridModal" />
+    </v-content>
+  </v-app>
   </main>
 </template>
 
 <script>
-  import {eventBus} from "./main.js";
-  import ColorSelect from "./components/ColorSelect";
-  import PaintArea from "./components/PaintArea";
-  import ModalClearGrid from "./components/ModalClearGrid"
+  import {eventBus} from "../main.js";
+  import ColorSelect from "../components/color/ColorSelect";
+  import PaintArea from "../components/paint/PaintArea";
+  import ModalClearGrid from "../components/modals/ModalClearGrid"
 
   export default {
     name: 'App',
