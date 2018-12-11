@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import {eventBus} from "../main.js";
+  import {eventBus} from "../../main.js";
   import RecentColorList from "./ColorSelectRecentList";
   import CurrentColorPanel from "./CurrentColorPanel";
   import {Sketch, Compact} from "vue-color";

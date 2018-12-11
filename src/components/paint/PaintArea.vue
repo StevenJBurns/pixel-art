@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import {eventBus} from "../main.js";
+  import {eventBus} from "../../main.js";
   import PaintGrid from "./PaintGrid";
 
   export default {
