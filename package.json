@@ -1,9 +1,9 @@
 {
   "name": "pixel-art",
   "version": "0.1.0",
+  "private": true,
   "description": "A Vue.js project",
   "author": "Steven J Burns <stevenjburns@msn.com>",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -25,7 +25,11 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "push-dir": "^0.4.1",
-    "vue-template-compiler": "^2.5.17"
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.4.6",
+    "vue-template-compiler": "^2.5.17",
+    "vuetify-loader": "^1.0.5"
   },
   "postcss": {
     "plugins": {
