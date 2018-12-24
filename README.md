@@ -7,6 +7,9 @@
 
 ---
 
+  Vuex
+  MAterial-UI
+
 ## Build Setup
 
 ``` bash
