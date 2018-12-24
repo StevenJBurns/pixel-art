@@ -7,8 +7,9 @@
 
 ---
 
-  Vuex
-  MAterial-UI
+  Vuex 
+  MAterial-UI 
+  
 
 ## Build Setup
 
