@@ -7,6 +7,10 @@
 
 ---
 
+  * Vuex 
+  * Material-UI 
+  * Local Storage API
+
 ## Build Setup
 
 ``` bash
